@@ -15,7 +15,8 @@ def hello_world():
     return 'Tracking app'
 
 @app.route('/track/email/<guid>', methods = ['POST'])
-def track_email(guid):
+@app.route('/track/url/<guid>', methods = ['POST'])
+def track(guid):
     
     if not request.json:
         abort(400)
@@ -23,13 +24,4 @@ def track_email(guid):
     print(guid, request.json)
     return '', 204
 
-@app.route('/track/url/<guid>', methods = ['POST'])
-def track_url(guid):
-    
-    if not request.json:
-        abort(400)
-    
-    print(guid, request.json)
-    return '', 204
-    
     
