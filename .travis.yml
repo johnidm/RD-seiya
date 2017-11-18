@@ -1,0 +1,12 @@
+language: node_js
+node_js:  
+  - "v9.2.0"
+
+before_script:
+   - npm i
+
+jobs:
+  include:
+    - stage: test
+      script: npm run lint
+      script: npm test

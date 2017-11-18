@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 const Seyia = (function() {
 
 	const baseUrl = 'http://localhost:5000/track/';
@@ -36,7 +36,7 @@ const Seyia = (function() {
     
 		xhttp.onreadystatechange = function() {
 			if (xhttp.status !== 204) {
-				/* eslint-disable no-console */
+				
 				console.error(xhttp);
 			}
 		};
