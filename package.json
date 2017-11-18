@@ -1,7 +1,7 @@
 {
-  "name": "Seiya",
-  "version": "1.0.0",
-  "description": "Tracking user events",
+  "name": "seiya",
+  "version": "0.0.9",
+  "description": "Tracking user events by browser session",
   "main": "seyia.js",
   "scripts": {
     "test": "mocha"
