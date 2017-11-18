@@ -1,0 +1,23 @@
+{
+  "name": "Seiya",
+  "version": "1.0.0",
+  "description": "Tracking user events",
+  "main": "seyia.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnidm/RD-seiya.git"
+  },
+  "author": "Johni Douglas Marangon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnidm/RD-seiya/issues"
+  },
+  "homepage": "https://github.com/johnidm/RD-seiya#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "sinon": "^4.1.2"
+  }
+}
