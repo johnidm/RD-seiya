@@ -13,6 +13,7 @@
         const serverUrl = 'http://localhost:5000/track/'
 
         let getOrCreateGUID = function () {
+            
             // Get or create a new GUID.
             // If GUID is not stored in browser session a new GUID is created to identify unique users
             const keyStorage = 'seyia-guid';
@@ -27,7 +28,8 @@
             }
 
             let guid = sessionStorage.getItem(keyStorage);
-            if (guid === null) {
+
+            if (guid === null || guid === undefined) {
                 guid = getNewGUID();
                 sessionStorage.setItem(keyStorage, guid);
             }
@@ -95,7 +97,7 @@
                 * 
                 * Each section on the browser generates a new GUID
                 */
-                return getOrCreateGUID();
+                return getOrCreateGUID();                
             }
 
         };
