@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "lint-fix": "eslint . --fix",
+    "uglify": "uglifyjs seyia.js --output seyia.mim.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "eslint": "^4.11.0",
     "expect.js": "^0.3.1",
     "mocha": "^4.0.1",
-    "sinon": "^4.1.2"
+    "sinon": "^4.1.2",
+    "uglify-es": "^3.1.9"
   }
 }
