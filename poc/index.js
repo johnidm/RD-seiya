@@ -41,27 +41,19 @@ const Seyia = (function() {
         }
     };
 
-    window.addEventListener('beforeunload', onbeforeunload);
-    function onbeforeunload(e) {
-        let title = document.title;
-        let url = window.location.href;
-        
-        data = {
-            title: title,
-            url: url,
-            date: new Date()
-        }
-
-        httpPost('url', data);
-    };
-
-    window.onpopstate = function(event) {
-      console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-    };
-
-    window.addEventListener('popstate', function(e){console.log('url changed')});
-
     return {
+
+        trackUrl(url) {
+            let title = document.title;
+            
+            data = {
+                title: title,
+                url: url,
+                date: new Date()
+            }
+    
+            httpPost('url', data);
+        },
 
         setEmail(email) {
             
