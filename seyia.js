@@ -45,9 +45,9 @@
 			const url = serverUrl + trackPath + '/' + guid;
 
 			const xhttp = new XMLHttpRequest();
-
 			xhttp.open('POST', url, true);
 			xhttp.setRequestHeader('Content-Type', 'application/json');
+
 			xhttp.send(JSON.stringify(data));
 
 			xhttp.onreadystatechange = function () {				

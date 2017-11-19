@@ -1,14 +1,17 @@
 let Seyia = require('../seyia.js');
 
 let sinon = require('sinon');
-var assert = require('assert');
+let assert = require('assert');
 
 describe('Seyia library', function () {
+	
+	var stubMethod;
+	var stubConstructor;
 
 	beforeEach(function () {
 
 		function mockStorage() {
-			var storage = {};
+			let storage = {};
 			return {
 				setItem: function (key, value) {
 					storage[key] = value || '';
@@ -20,6 +23,19 @@ describe('Seyia library', function () {
 		}
 		global['sessionStorage'] = mockStorage();
 
+		stubMethod = sinon.stub({ open: function () { }, setRequestHeader: function () { }, send: function () { } });
+		stubConstructor = sinon.stub().returns(stubMethod);
+		global['XMLHttpRequest'] = stubConstructor;
+
+		function mockDocument() {
+			return {
+				get title() {
+					return 'Home';
+				}
+			};
+		}
+		global['document'] = mockDocument();
+			
 	});
 
 	describe('#guid', function () {
@@ -54,4 +70,45 @@ describe('Seyia library', function () {
 			assert.ok(getItem.calledWith('seyia-guid'));
 		});
 	});
+
+	describe('#setEmail', function () {
+
+		it('should set email on server', function () {
+			
+			const fakeGUID = 'a69d67ad-40ce-4da7-b951-38f9a841e577';
+
+			const getItem = sinon.stub(global.sessionStorage, 'getItem');
+			getItem.returns(fakeGUID);
+			
+			Seyia().setEmail('sheldon@cupper.com');
+
+			assert.equal(1, stubConstructor.callCount);
+
+			assert.ok(stubMethod.open.calledWith('POST', 'http://localhost:5000/track/email/a69d67ad-40ce-4da7-b951-38f9a841e577', true));
+			assert.ok(stubMethod.setRequestHeader.calledWith('Content-Type', 'application/json'));			
+			assert.ok(stubMethod.send.calledWith('{"email":"sheldon@cupper.com"}'));
+		});
+
+	});
+
+	describe('#storeUrl', function () {
+
+		it('should set email on server', function () {
+
+			const fakeGUID = 'a69d67ad-40ce-4da7-b951-38f9a841e577';
+
+			const getItem = sinon.stub(global.sessionStorage, 'getItem');
+			getItem.returns(fakeGUID);
+
+			Seyia().storeUrl('sheldon@cupper.com');
+
+			assert.equal(1, stubConstructor.callCount);
+
+			assert.ok(stubMethod.open.calledWith('POST', 'http://localhost:5000/track/url/a69d67ad-40ce-4da7-b951-38f9a841e577', true));
+			assert.ok(stubMethod.setRequestHeader.calledWith('Content-Type', 'application/json'));
+		});
+
+	});
+
+
 });
