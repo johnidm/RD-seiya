@@ -84,7 +84,7 @@ describe('Seyia library', function () {
 
 			assert.equal(1, stubConstructor.callCount);
 
-			assert.ok(stubMethod.open.calledWith('POST', 'http://localhost:5000/track/email/a69d67ad-40ce-4da7-b951-38f9a841e577', true));
+			assert.ok(stubMethod.open.calledWith('POST', 'https://rd-shun.herokuapp.com/api/v1/track/email/a69d67ad-40ce-4da7-b951-38f9a841e577', true));
 			assert.ok(stubMethod.setRequestHeader.calledWith('Content-Type', 'application/json'));			
 			assert.ok(stubMethod.send.calledWith('{"email":"sheldon@cupper.com"}'));
 		});
@@ -104,7 +104,7 @@ describe('Seyia library', function () {
 
 			assert.equal(1, stubConstructor.callCount);
 
-			assert.ok(stubMethod.open.calledWith('POST', 'http://localhost:5000/track/url/a69d67ad-40ce-4da7-b951-38f9a841e577', true));
+			assert.ok(stubMethod.open.calledWith('POST', 'https://rd-shun.herokuapp.com/api/v1/track/url/a69d67ad-40ce-4da7-b951-38f9a841e577', true));
 			assert.ok(stubMethod.setRequestHeader.calledWith('Content-Type', 'application/json'));
 		});
 
