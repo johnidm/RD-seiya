@@ -1,6 +1,6 @@
 # RD-seiya
 
-[](https://www.quartogeek.com.br/loja/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/m/i/miniatura-figure-cavaleiros-do-zodiaco-seiya-loja-quarto-geek-1.jpg)
+![](https://pm1.narvii.com/6314/1c4f90676e8e7c5b65513342b648e49de27c10c1_128.jpg)
 
 [![Build Status](https://travis-ci.org/johnidm/RD-seiya.svg?branch=master)](https://travis-ci.org/johnidm/RD-seiya)
 
