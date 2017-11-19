@@ -1,7 +1,7 @@
 (function (global) {
 
 	/*
-    *  Seyia v0.0.9
+    *  Seyia v1.0.0
     *  Library to track user events in Saas applications
     *  Supported events and methods:
     *     - Define an user email by session
@@ -10,7 +10,7 @@
 
 	const Seyia = (function () {
 
-		const serverUrl = 'https://rd-shun.herokuapp.com/track/';
+		const serverUrl = 'https://rd-shun.herokuapp.com/api/v1/track/';
 
 		let getOrCreateGUID = function () {
             
