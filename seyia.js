@@ -10,7 +10,7 @@
 
 	const Seyia = (function () {
 
-		const serverUrl = 'http://localhost:5000/track/';
+		const serverUrl = 'https://rd-shun.herokuapp.com/track/';
 
 		let getOrCreateGUID = function () {
             
