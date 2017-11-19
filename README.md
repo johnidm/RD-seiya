@@ -34,3 +34,9 @@ First of all you need to change the source code in the file `seyia.js`.
 After, minify the main file with the command `npm run uglify`.
 
 Okay, just use.
+
+
+### Upcoming features
+
+- Review rule that allows more than one e-mail per token.
+- Capture URL changes automatically.
